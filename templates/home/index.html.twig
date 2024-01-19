@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('./assets/css/catalogue.css')}}">
+    <div class="wrapper">
+		<h1 style="margin-top: 3rem;">Bienvenue à tous sur VinylShop! En vous souhaitant une agréable journée!</h1>
+        <div class="spacer"></div>
+		<div id="slider"></div>
+        <h2>Nos meilleurs titres au meilleur prix </h2>
+		<div class="spacer"></div>
+        <div id="catalogue">
+			{% for vinyl in vinyls %}
+				<div class="card">
+					<img src="{{ asset('assets/img/cover/'~ vinyl.id ~'.jpg') }}" alt="">
+					<p class="cardTitre">{{ vinyl.titre }}</p>
+					<p class="cardArtiste">{{ vinyl.artiste }}</p>
+					<p class="cardAnnee">{{ vinyl.annee }}</p>
+                    <a href="{{ path('app_vinyl_show', {'id': vinyl.id}) }}">Modifier</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

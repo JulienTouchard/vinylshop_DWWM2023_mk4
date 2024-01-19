@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vinyl{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h1>Create new Vinyl</h1>
+
+    {{ include('vinyl/_form.html.twig') }}
+
+    <a href="{{ path('app_vinyl_index') }}">back to list</a>
+</div>
+{% endblock %}
