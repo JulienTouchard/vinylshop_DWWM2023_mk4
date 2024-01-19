@@ -111,6 +111,7 @@ nav i{
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 footer{
     height: 5rem;

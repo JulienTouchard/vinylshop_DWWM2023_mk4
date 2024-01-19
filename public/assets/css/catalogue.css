@@ -7,6 +7,7 @@
 }
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -40,9 +41,16 @@
 }
 
 .cardAnnee {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    transform: rotate(20deg);
     font-style: italic;
     font-size: .7rem;
-    color: #898989;
+    font-weight: 900;
+    background-color: rgb(207, 44, 44);
+    color: #fff;
+    padding: .5rem .7rem;
 }
 
 .card a {

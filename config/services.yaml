@@ -6,6 +6,8 @@
 parameters:
     # route pour les upload client/vinyl
     cover_directory: '%kernel.project_dir%/public/assets/img/cover'
+    # route vers le dossier upload mp3
+    mp3_directory: '%kernel.project_dir%/public/assets/audio/'
 
 services:
     # default configuration for services in *this* file

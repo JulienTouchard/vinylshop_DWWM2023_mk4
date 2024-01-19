@@ -31,7 +31,14 @@ class VinylController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+            // uplaod du fichier mp3
+            $mp3 = $form->get('mp3')->getData();
+            if($mp3){
+                $directory = str_replace("\\", "/", $this->getParameter('mp3_directory'))."/";
+                $originalName = pathinfo($mp3->getClientOriginalName(), PATHINFO_FILENAME).".mp3";
+                $mp3->move($directory, $originalName);
+                $vinyl->setAudio($originalName);
+            }
             $entityManager->persist($vinyl);
             $entityManager->flush();
             // pour utiliser le getId mettre la creation d'image apres le flush 
